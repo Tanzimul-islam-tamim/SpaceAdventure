@@ -1,0 +1,397 @@
+#:import Clock kivy.clock.Clock
+Screenmngr:
+    StartUpStudios:
+    MainWindow:
+    DisclaimerWindow
+    SecondWindow:
+    ThirdWindow:
+    GameWindow:
+
+
+<StartUpStudios>:
+    name: "Fukeu"
+
+    Label:
+        text: "FuKEU \n Studios"
+        font_size: 40
+
+    Image:
+        source: "SpaceRetardImages//Logo.png"
+    Button:
+        text: "Continue"
+        background_color: 0.5,0.6,0.8,1
+        size_hint:0.18,0.058
+        pos_hint:  { "x" : 0.40 , "y" : 0.295}
+        on_release:
+            app.root.current = "main"
+            root.manager.transition.direction = "up"
+
+    Label:
+        font_size: 80
+        text: "|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|"
+        pos_hint: {"x":0.45,"y":0}
+    Label:
+        font_size: 80
+        text: "|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|"
+        pos_hint: {"x":-0.45,"y":0}
+
+
+<MainWindow>:
+    name: "main"
+    background_color: 1,1,1,1
+    Image:
+        source:"SpaceRetardImages//spaceman.png"
+    Label:
+        id: "lb01"
+        font_size: 25
+        color: 0.9,0.2,0.1,1
+        text: """Are you ready to play this Shitty game or whatever this is? """
+
+    Label:
+        id: "lb02"
+
+        text: "Yes, I am a Retard and I want to play this :"
+        pos_hint: {'x': -0.3, 'y': -0.3}
+
+    Button:
+        text: "BEGIN"
+        background_color: 0.2,0.7,0.3,1
+        size_hint: 1,0.023
+        pos_hint: {"x":0,"y":0.14}
+        on_release:
+            app.root.current="Disclaimer"
+            root.manager.transition.direction = "right"
+
+    Label:
+        id: "lb03"
+        text: "No! I have a Pussy. And am very afraid :"
+        pos_hint: {"x": -0.31,"y":-0.4}
+
+    Button:
+        text: "Sorry! Periods"
+        size_hint: 1,0.026
+        pos_hint: {"x":0,"y":0.048}
+        background_color: 1,0.2,0.1,1
+        on_release: root.PussyPops()
+
+    Label:
+        id: popupp
+        font_size: 12
+        color: 0.9,0.3,0.2,0.5
+        text: "I love you though"
+        size_hint: 0.3, 0.2
+        pos_hint: {"x":0.76,"y": 0.82}
+
+#:import Factory kivy.factory.Factory
+<PussyFloat@Popup>:
+    id: pssipp
+
+
+    Image:
+        source: "SpaceRetardImages//pussy.png"
+        pos_hint: {"x":0 , "y": 0}
+
+    Label:
+
+        text: "~SPOT THE DIFFERENCE~"
+        color: 0.9,0.5,0.7,1
+        pos_hint: { "x" : 0 , "y" : 0.46 }
+
+    Label:
+        text: " Between You And This Pussy "
+        color: 0.2,0.8,0.6,1
+        pos_hint: { "x" : 0 , "y" : -0.46 }
+
+    Button:
+        text: "Return"
+        font_size: 10
+        size_hint: 0.15,0.03
+        pos_hint: { "x" : 1.05 , "y" : 1 }
+        color: 1,0.2,0.2,1
+        background_color: 0.1,0.9,0.1,1
+    Button:
+        text: "Return"
+        font_size: 10
+        size_hint: 0.15,0.03
+        pos_hint: { "x" : -0.2, "y" : 1 }
+        color: 1,0.2,0.2,1
+        background_color: 0.1,0.9,0.1,1
+
+
+
+<DisclaimerWindow>:  #this is the disclaimer Window
+    name: "Disclaimer"
+
+    Label:
+        font_size: 30
+        text:"Lower Your Expectations... \n                __🙂🙂🙂__"
+        color: 1,0,1,1
+        pos_hint : { "x" : 0.01 , "y" : 0.4 }
+
+    Label:
+        font_size: 80
+        text:"______________________________________________________________________________________________"
+        pos_hint: { "x" : 0 , "y" : 0.35}
+
+    Label:
+        text: " ALL THE CHARACTERS & EVENTS IN THIS GAME \n  \n --EVEN BASED ON REAL PERSON --ARE ENTIRELY FICTIONAL \n  \n  ALL THE STORIES AND OTHER CONTENTS ARE MADE -- VERY POORLY \n  \n THE FOLLOWING GAME CONTAINS COARSE LANGUAGE AND \n  \n  SHOULD NOT BE PLAYED BY ANYONE_"
+        font_size: 23
+
+    Label:
+        font_size: 80
+        text:"______________________________________________________________________________________________"
+        pos_hint: { "x" : 0 , "y" : -0.25}
+
+    Button:
+        text: " PROCEED "
+        background_color: 0.1,1,0.8,0.3
+        size_hint:   1 , 0.2
+        on_release:
+            app.root.current = "Second"
+            root.manager.transition.direction = "left"
+
+
+<SecondWindow>:
+    name: "Second"
+
+    GridLayout:
+        cols: 1
+        Label:
+            color: 0.1,0.9,0.1,1
+            text: "BEFORE STARTING KINDLY FILL THE FUCKING FORM BELOW:- "
+            font_size: 24
+            pos_hint: {"x":0,"y": 0.4}
+
+
+        GridLayout:
+            cols: 3
+
+
+            Label:
+                id: Nm
+                text: "Enter Your Name : "
+
+            TextInput:
+                id: name
+                text: "Ex:- Islam"
+                multiline : False
+                on_double_tap:
+                    name.text = "Tamim"
+
+            Button:
+                text: "Finalize Name"
+                on_release:
+                    app.root.current = "Third"
+                    root.manager.transition.direction = "up"
+
+#Okay so Comments can be done in the same manner as python   and global variables can be set like this #:set name theValueAssigned
+
+            Label:
+                id: Ag
+                text: "Enter Your Age : "
+
+
+            TextInput:
+                id: agee
+                text: "21"
+                multiline: False
+                on_text_validate:                    # 'Might Need to change this into triple tap for me as  -- default user'
+                    agee.text = "58"
+            Button:
+                text: "Finalize Age"
+                background_color: 1,0,1,0.5
+                on_release:
+                    app.root.current = None
+
+            Label:
+                id: "eml"
+                text: "Enter Email Address : "
+
+            TextInput:
+                text: "islam@dominique.com"
+                id: "email"
+                multiline: False
+                background_color: 1,1,0.3,0.3
+
+            Button:
+                text: "Finalize Email"
+                background_color: 1,0.2,0.7,0.2
+                on_release:
+                    app.root.current = None
+
+            Button:
+                text:""
+                background_color: 0,1,0.5,0.5
+
+            Button:
+                text: "Submit"
+                background_color: 0,1,0.5,0.5
+                size_hint: 1,1
+
+                on_release:
+                    app.root.current = None
+
+            Button:
+                text:""
+                background_color: 0,1,0.5,0.5
+                on_release: root.Popss()
+
+<FloatLayoutt>:
+    id: RightPop
+    Label:
+        text: " This is an Empty Button \n          fucking retard"
+        color: 1,1,0,1
+        pos_hint: {"x":0.3,"y":0.5}
+        size_hint: 0.4,0.4
+
+    Button:
+        text: "Explore More"
+        on_press: app.root.current = ""
+        pos_hint : {"x":0.1,"y":0.3}
+        size_hint: 0.4,0.2
+    Label:
+        font_size: 25
+        text: "Close"
+
+        pos_hint : {"x": 0.63,"y":0.6}
+
+    Button:
+        text: "Close"
+        pos_hint : {"x":1,"y":1}
+        background_color: 0.4,0.2,0.7,1
+        size_hint: 0.3,0.2
+
+<ThirdWindow>:
+    name: "Third"
+
+
+    Image:
+        allow_stretch: True
+        source: "SpaceRetardImages//monmom.png"
+
+
+    Button:
+        markup: True
+        text: "[b] NEW GAME [/b]"
+        color: 0,0,0,1
+        font_size: 15
+        background_color: 0.4,0.9,0.2,1
+        size_hint: 0.3,0.2
+        pos_hint: {"x" : 0.35 , "y" : 0.72}
+
+    Button:
+        markup: True
+        text: "[b]LOAD GAME[/b]"
+        color: 1,1,1,1
+        font_size: 15
+        background_color: 0.1,0.3,0.7,1
+        size_hint: 0.3,0.2
+        pos_hint: {"x" : 0.35 , "y" : 0.51}
+        on_release:
+            app.root.current = "Fourth"
+
+
+    Button:
+        markup: True
+        text: "[b]ABOUT[/b]"
+        color: 1,1,1,1
+        font_size: 15
+        background_color: 0.5,0.3,0.1,1
+        size_hint: 0.3,0.2
+        pos_hint: {"x" : 0.35 , "y" : 0.3}
+
+    Button:
+        markup: True
+        text: "[b] HELP [/b]"
+        color: 1,1,1,1
+        font_size: 15
+        background_color: 0.9,0.1,0.1,1
+        size_hint: 0.3,0.2
+        pos_hint: {"x" : 0.35 , "y" : 0.09}
+
+
+
+<FourthWindow>:
+    name: "Fourth"
+
+    on_pre_enter: ()
+
+    ProgressBar:
+        id: progress
+
+
+    Button:
+        text: "+"
+        size_hint: 0.1,0.1
+        pos_hint: {"x" : 0.2 , "y" : 0.4 }
+
+        on_press:
+            root.PlusClickAdd()
+
+    Slider:
+        max: 100
+        min: 0
+        pos_hint: {"x" : 0, "y" : 0.2 }
+
+<GameWindow>:
+    name: "gamewindow"
+
+
+
+    GridLayout:
+        rows: 2
+        cols: 2
+
+
+        Button:
+            text: "1"
+
+
+
+        Carousel:
+            direction: 'right'
+            Image:
+                source: "SpaceRetardImages//monmom.png"
+            Image:
+                source: "SpaceRetardImages//spaceman.png"
+
+            Button:
+                text: "Carousal"
+            
+
+
+        GridLayout:
+            rows: 2
+            cols:2
+
+
+            Button:
+                text: "3"
+
+
+            Button:
+                text: "4"
+
+
+        GridLayout:
+            rows: 2
+
+
+
+            TextInput:
+                text: "gameinput"
+                id: GameInput
+                background_color: 1,1,0.7,1
+
+    Label:
+        font_size: 80
+        text:"______________________________________"
+        color: 1,1,1,1
+        pos_hint: { "x" : 0 , "y" : 0.05}
+
+    Label:
+        markup: True
+        font_size: 15
+        color: 0,0.9,0.1,1
+        text: "[b]AVAILABLE OPTIONS[/b]"
+        pos_hint: {"x" : -0.37 , "y" : -0.04 }
