@@ -1,0 +1,3 @@
+# SpaceRetard
+this is under construction...
+It is just a normal random text game
