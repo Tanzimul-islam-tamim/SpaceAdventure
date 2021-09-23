@@ -1,0 +1,377 @@
+Screenmanager:
+    GameWindow001:
+    GameWindow002:
+    GameWindow003:
+
+
+
+<GameWindow001>:
+    name: "GameWinodow001"
+
+    GridLayout:
+        rows: 2
+        cols: 2
+
+        Button:
+            text: "Reserved for photos"
+
+        TextInput:
+            id: story
+            multiline: True
+            markup: True
+            hint_text:"\n\n\n\n\n\n                                  press start to view"
+            background_color: 0.5 , 0.3 , 0.4 , 1
+
+
+        GridLayout:
+            rows: 2
+            cols:2
+
+            Button:
+
+                on_release: None                # Have to include a PopUp
+                background_color: 0.4 , 0.2 , 0.1 , 0.5
+
+            Button:
+                text: "Submit-autocomplete-Leave"
+                font_size: 10
+                background_color: 0.8,0.1,0.01,1
+
+
+        GridLayout:
+            rows: 2
+
+            TextInput:
+                id: GameInput
+                multiline: False
+                hint_text: "\n\n\n\n\n\n\n                                          gameinput"
+                background_color: 1,1,0.7,1
+
+    FloatLayout:
+
+
+        Label:
+            font_size: 80
+            text:"______________________________________"
+            color: 1,1,1,1
+            pos_hint: { "x" : 0 , "y" : 0.05}
+
+        Label:
+            markup: True
+            font_size: 15
+            color: 0,0.9,0.1,1
+            text: "[b]AVAILABLE OPTIONS[/b]"
+            pos_hint: {"x" : -0.37 , "y" : -0.04 }
+
+
+
+        Button:
+            markup: True
+            text: "[u]AUTO COMPLETE[/u]"
+            color: 0.3,0.7,0,1
+            background_color: 0,1,1,0.999
+            pos_hint: {"x": 0.25 , "y" : 0.182 }
+            size_hint: 0.25 , 0.14
+
+
+        Button:
+            markup: True
+            text: "[b][u]LEAVE[/u][/b]"
+            color: 0.9,0.2,0,1
+            background_color: 0.8941 , 0.556 , 0.327 , 1
+            pos_hint: {"x": 0.25 , "y" : 0.0 }
+            size_hint: 0.25 , 0.14
+            on_release: root.ExitCode()
+
+
+        Button:
+            markup: True
+            text: "[b][i][u]START[/u][/i][/b]"
+            background_color:235/255.000 , 0.2 , 60 / 255.000 , 1
+            size_hint: 0.5,0.1
+            pos_hint:{"x" : 0.5 , "y" : 0.5}
+            on_press: root.StartStory()
+            on_release: root.Options()
+
+
+
+        Button:
+            markup : True
+            text: "[b][u]SUBMIT[/u][/b]"
+            color: 0.7,0.32,0,1
+            background_color: 0.658823,0.784313,0.474509,0.999
+            pos_hint: {"x": 0.25 , "y" : 0.35 }
+            size_hint: 0.25 , 0.14
+            on_press:
+                app.root.current = "GameWindow002" if GameInput.text == "Check if you packed all the equipments" else "GameWindow003"
+
+        Label:
+            id: opt1
+            markup: True
+            text: "[b]1[/b]"
+            color: 1,1,1,1
+            font_size: 11
+            pos_hint: { "x" : -0.38 , "y" : -0.1 }
+        Label:
+            id: opt2
+            markup: True
+            text: "[b]2[/b]"
+            color: 1,1,1,1
+            font_size: 11
+            pos_hint: { "x" : -0.38 , "y" : -0.2 }
+        Label:
+            id: opt3
+            markup: True
+            text: "[b]3[/b]"
+            color: 1,1,1,1
+            font_size: 11
+            pos_hint: { "x" : -0.38 , "y" : -0.3 }
+        Label:
+            id: opt4
+            markup: True
+            text: "[b]4[/b]"
+            color: 1,1,1,1
+            font_size: 11
+            pos_hint: { "x" : -0.38 , "y" : -0.4 }
+
+
+
+
+
+
+
+
+
+<GameWindow002>:
+    name: "GameWinodow002"
+
+    GridLayout:
+        rows: 2
+        cols: 2
+
+        Button:
+            text: "Reserved for photos"
+
+        TextInput:
+            id: story
+            multiline: True
+            markup: True
+            hint_text:"\n\n\n\n\n\n                                  press start to view"
+            background_color: 0.5 , 0.3 , 0.4 , 1
+
+
+        GridLayout:
+            rows: 2
+            cols:2
+
+            Button:
+
+                on_release: None                # Have to include a PopUp
+                background_color: 0.4 , 0.2 , 0.1 , 0.5
+
+            Button:
+                text: "Submit-autocomplete-Leave"
+                font_size: 10
+                background_color: 0.8,0.1,0.01,1
+
+
+        GridLayout:
+            rows: 2
+
+            TextInput:
+                id: GameInput
+                hint_text: "\n\n\n\n\n\n\n                                          gameinput"
+                background_color: 1,1,0.7,1
+
+    FloatLayout:
+
+
+        Label:
+            font_size: 80
+            text:"______________________________________"
+            color: 1,1,1,1
+            pos_hint: { "x" : 0 , "y" : 0.05}
+
+        Label:
+            markup: True
+            font_size: 15
+            color: 0,0.9,0.1,1
+            text: "[b]AVAILABLE OPTIONS[/b]"
+            pos_hint: {"x" : -0.37 , "y" : -0.04 }
+
+
+
+
+        Button:
+            markup: True
+            text: "[u]AUTO COMPLETE[/u]"
+            color: 0.3,0.7,0,1
+            background_color: 0,1,1,0.999
+            pos_hint: {"x": 0.25 , "y" : 0.182 }
+            size_hint: 0.25 , 0.14
+
+
+        Button:
+            markup: True
+            text: "[b][u]LEAVE[/u][/b]"
+            color: 0.9,0.2,0,1
+            background_color: 0.8941 , 0.556 , 0.327 , 1
+            pos_hint: {"x": 0.25 , "y" : 0.0 }
+            size_hint: 0.25 , 0.14
+            on_release: root.ExitCode()
+
+
+        Button:
+            markup: True
+            text: "[b][i][u]START[/u][/i][/b]"
+            background_color:235/255.000 , 0.2 , 60 / 255.000 , 1
+            size_hint: 0.5,0.1
+            pos_hint:{"x" : 0.5 , "y" : 0.5}
+            on_press: root.StartStory()
+            on_release: root.Options()
+
+        Button:
+            markup : True
+            text: "[b][u]SUBMIT[/u][/b]"
+            color: 0.7,0.32,0,1
+            background_color: 0.658823,0.784313,0.474509,0.999
+            pos_hint: {"x": 0.25 , "y" : 0.35 }
+            size_hint: 0.25 , 0.14
+            on_press:
+                app.root.current = "GameWindow001"
+
+        Label:
+            id: opt1
+            markup: True
+            text: "[b]1[/b]"
+            color: 1,1,1,1
+            font_size: 11
+            pos_hint: { "x" : -0.38 , "y" : -0.1 }
+        Label:
+            id: opt2
+            markup: True
+            text: "[b]2[/b]"
+            color: 1,1,1,1
+            font_size: 11
+            pos_hint: { "x" : -0.38 , "y" : -0.2 }
+        Label:
+            id: opt3
+            markup: True
+            text: "[b]3[/b]"
+            color: 1,1,1,1
+            font_size: 11
+            pos_hint: { "x" : -0.38 , "y" : -0.3 }
+
+
+
+
+<GameWindow003>:
+    name: "GameWindow003"
+    GridLayout:
+        rows: 2
+        cols: 2
+
+        Button:
+            text: "Reserved for photos"
+
+        TextInput:
+            id: story
+            multiline: True
+            markup: True
+            hint_text:"\n\n\n\n\n\n                                  press start to view"
+            background_color: 0.5 , 0.3 , 0.4 , 1
+
+        GridLayout:
+            rows: 2
+            cols:2
+
+            Button:
+                on_release: None                # Have to include a PopUp
+                background_color: 0.4 , 0.2 , 0.1 , 0.5
+
+            Button:
+                text: "Submit-autocomplete-Leave"
+                font_size: 10
+                background_color: 0.8,0.1,0.01,1
+
+        GridLayout:
+            rows: 2
+
+            TextInput:
+                id: GameInput
+                hint_text: "\n\n\n\n\n\n\n                                          gameinput"
+                background_color: 1,1,0.7,1
+
+    FloatLayout:
+
+        Label:
+            font_size: 80
+            text:"______________________________________"
+            color: 1,1,1,1
+            pos_hint: { "x" : 0 , "y" : 0.05}
+
+        Label:
+            markup: True
+            font_size: 15
+            color: 0,0.9,0.1,1
+            text: "[b]AVAILABLE OPTIONS[/b]"
+            pos_hint: {"x" : -0.37 , "y" : -0.04 }
+
+        Button:
+            markup: True
+            text: "[u]AUTO COMPLETE[/u]"
+            color: 0.3,0.7,0,1
+            background_color: 0,1,1,0.999
+            pos_hint: {"x": 0.25 , "y" : 0.182 }
+            size_hint: 0.25 , 0.14
+
+        Button:
+            markup: True
+            text: "[b][u]LEAVE[/u][/b]"
+            color: 0.9,0.2,0,1
+            background_color: 0.8941 , 0.556 , 0.327 , 1
+            pos_hint: {"x": 0.25 , "y" : 0.0 }
+            size_hint: 0.25 , 0.14
+            on_release: root.ExitCode()
+
+        Button:
+            markup: True
+            text: "[b][i][u]START[/u][/i][/b]"
+            background_color:235/255.000 , 0.2 , 60 / 255.000 , 1
+            size_hint: 0.5,0.1
+            pos_hint:{"x" : 0.5 , "y" : 0.5}
+            on_press: root.StartStory()
+            on_release: root.Options()
+
+        Button:
+            markup : True
+            text: "[b][u]SUBMIT[/u][/b]"
+            color: 0.7,0.32,0,1
+            background_color: 0.658823,0.784313,0.474509,0.999
+            pos_hint: {"x": 0.25 , "y" : 0.35 }
+            size_hint: 0.25 , 0.14
+            on_press:
+                app.root.current = "GameWindow00"
+
+        Label:
+            id: opt1
+            markup: True
+            text: "[b]1[/b]"
+            color: 1,1,1,1
+            font_size: 11
+            pos_hint: { "x" : -0.38 , "y" : -0.1 }
+        Label:
+            id: opt2
+            markup: True
+            text: "[b]2[/b]"
+            color: 1,1,1,1
+            font_size: 11
+            pos_hint: { "x" : -0.38 , "y" : -0.2 }
+        Label:
+            id: opt3
+            markup: True
+            text: "[b]3[/b]"
+            color: 1,1,1,1
+            font_size: 11
+            pos_hint: { "x" : -0.38 , "y" : -0.3 }
+
