@@ -1,3 +1,3 @@
 # SpaceRetard
 this is under construction...
-It is just a normal random text game
+And I am lazy. Don't know when I will finish it
